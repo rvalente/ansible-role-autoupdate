@@ -1,0 +1,39 @@
+---
+- name: install apticron
+  package:
+    name: apticron
+    state: present
+  become: true
+
+- name: install unattended-upgrades
+  package:
+    name: unattended-upgrades
+    state: present
+  become: true
+
+- name: configure apticron
+  template:
+    src: 10periodic.j2
+    dest: /etc/apt/apt.conf.d/10periodic
+    owner: root
+    group: root
+    mode: 0644
+  become: true
+
+- name: configure unattended-upgrades
+  template:
+    src: 50unattended-upgrades.j2
+    dest: /etc/apt/apt.conf.d/50unattended-upgrades
+    owner: root
+    group: root
+    mode: 0644
+  become: true
+
+- name: configure apticron
+  template:
+    src: apticron.conf.j2
+    dest: /etc/apticron/apticron.conf
+    owner: root
+    group: root
+    mode: 0644
+  become: true

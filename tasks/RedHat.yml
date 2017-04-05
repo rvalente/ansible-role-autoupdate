@@ -1,0 +1,27 @@
+---
+- name: ensure libselinux-python installed
+  package:
+    name: libselinux-python
+    state: present
+  become: true
+
+- name: install yum-cron
+  package:
+    name: yum-cron
+    state: present
+  become: true
+
+- name: Configure yum-cron
+  lineinfile:
+    dest: "/etc/yum/yum-cron.conf"
+    regexp: '^apply_updates = .+'
+    line: 'apply_updates = yes'
+  notify: restart yum-cron
+  become: true
+
+- name: start yum-cron on boot
+  service:
+    name: yum-cron
+    state: started
+    enabled: yes
+  become: true

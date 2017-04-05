@@ -1,2 +1,6 @@
 ---
-# handlers file for autoupdate
+- name: restart yum-cron
+  service:
+    name: yum-cron
+    state: restarted
+  become: true

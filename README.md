@@ -1,38 +1,55 @@
-Role Name
-=========
+# Automatic System Updates
 
-A brief description of the role goes here.
+Configure automatic updates on Debian-based or RedHat-based distributions.
 
-Requirements
-------------
+## Requirements
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+There are no prerequisites for this role. It will install the required auto-update mechanisms and configure them.
 
-Role Variables
---------------
+## Role Variables
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+### Debian
 
-Dependencies
-------------
+``` yaml
+apticron_email: root
+periodic_update_package_lists: 1
+periodic_download_upgradable_packages: 1
+periodic_autoclean_interval: 7
+periodic_unattended_upgrade: 1
+unattended_upgrades_allowed_origins: []
+unattended_upgrades_blacklist: []
+unattended_upgrades_auto_fix_inturrupted_dpkg: "true"
+unattended_upgrades_minimal_steps: "false"
+unattended_upgrades_install_on_shutdown:  "false"
+unattended_upgrades_mail: {{ apticron_email }}
+unattended_upgrades_mail_only_on_error: "true"
+unattended_upgrades_remove_unused_dependencies: "true"
+unattended_upgrades_automatic_reboot: "false"
+unattended_upgrades_automatic_reboot_time: "now"
+unattended_upgrades_bandwidth_limit: ""
+```
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+### RedHat
 
-Example Playbook
-----------------
+``` yaml
+```
+
+## Dependencies
+
+There are no dependencies.
+
+## Example Playbook
 
 Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
 
     - hosts: servers
       roles:
-         - { role: username.rolename, x: 42 }
+         - { role: rvalente.autoupdate }
 
-License
--------
+## License
 
 See `LICENSE`
 
-Author Information
-------------------
+## Author Information
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+Ronald Valente
