@@ -8,7 +8,7 @@ autoupdate_blacklist: []
 autoupdate_auto_fix_inturrupted_dpkg: "true"
 autoupdate_minimal_steps: "false"
 autoupdate_install_on_shutdown:  "false"
-autoupdate_mail: {{ autoupdate_notification_email }}
+autoupdate_mail: "{{ autoupdate_notification_email }}"
 autoupdate_mail_only_on_error: "true"
 autoupdate_remove_unused_dependencies: "true"
 autoupdate_automatic_reboot: "false"

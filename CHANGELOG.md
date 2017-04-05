@@ -22,3 +22,4 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - Ensure we run with `become: true`
 - Fix typo
+- Properly quote the variable for email
