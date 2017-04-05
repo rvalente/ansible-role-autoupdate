@@ -1,5 +1,7 @@
 # Automatic System Updates
 
+[![Build Status](https://travis-ci.org/rvalente/ansible-role-autoupdate.svg?branch=master)](https://travis-ci.org/rvalente/ansible-role-autoupdate)
+
 Configure automatic updates on Debian-based or RedHat-based distributions.
 
 ## Requirements
