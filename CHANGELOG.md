@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Created task to install `yum-cron` and configure autoupdates
 - Exposed all Debian configuration items as variables
 - Platforms added to meta.yml
+- Adopted docker-based testing thansks to @geerlingguy
 
 ### Changed
 - Replaced generated values in `README.md` with accurate details.
