@@ -4,7 +4,6 @@ services: docker
 
 env:
   - distro: centos7
-  - distro: ubuntu1604
   - distro: debian8
 
 script:
