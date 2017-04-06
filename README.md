@@ -10,28 +10,37 @@ There are no prerequisites for this role. It will install the required auto-upda
 
 ## Role Variables
 
-### Debian
+### Main Variables
 
 ``` yaml
-apticron_email: root
-periodic_update_package_lists: 1
-periodic_download_upgradable_packages: 1
-periodic_autoclean_interval: 7
-periodic_unattended_upgrade: 1
-unattended_upgrades_allowed_origins: []
-unattended_upgrades_blacklist: []
-unattended_upgrades_auto_fix_inturrupted_dpkg: "true"
-unattended_upgrades_minimal_steps: "false"
-unattended_upgrades_install_on_shutdown:  "false"
-unattended_upgrades_mail: {{ apticron_email }}
-unattended_upgrades_mail_only_on_error: "true"
-unattended_upgrades_remove_unused_dependencies: "true"
-unattended_upgrades_automatic_reboot: "false"
-unattended_upgrades_automatic_reboot_time: "now"
-unattended_upgrades_bandwidth_limit: ""
+autoupdate_notification_email: root
+```
+
+### Debian
+
+Variables specific to Debian.
+
+``` yaml
+autoupdate_update_package_lists: 1
+autoupdate_download_upgradable_packages: 1
+autoupdate_autoclean_interval: 7
+autoupdate_unattended_upgrade: 1
+autoupdate_allowed_origins: []
+autoupdate_blacklist: []
+autoupdate_auto_fix_inturrupted_dpkg: "true"
+autoupdate_minimal_steps: "false"
+autoupdate_install_on_shutdown:  "false"
+autoupdate_mail: "{{ autoupdate_notification_email }}"
+autoupdate_mail_only_on_error: "true"
+autoupdate_remove_unused_dependencies: "true"
+autoupdate_automatic_reboot: "false"
+autoupdate_automatic_reboot_time: "now"
+autoupdate_bandwidth_limit: ""
 ```
 
 ### RedHat
+
+Variables specific to RedHat.
 
 ``` yaml
 ```
