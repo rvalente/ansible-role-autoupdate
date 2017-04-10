@@ -1,10 +1,4 @@
 ---
-- name: ensure libselinux-python installed
-  package:
-    name: libselinux-python
-    state: present
-  become: true
-
 - name: install yum-cron
   package:
     name: yum-cron
